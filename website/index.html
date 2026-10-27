@@ -1,134 +1,115 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>图匣 PicVault — 电商图片一键采集</title>
-    <meta
-      name="description"
-      content="图匣 PicVault：面向淘宝、天猫、京东、拼多多、亚马逊等平台的浏览器扩展，批量识别并下载高清商品图。"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="assets/favicon.png" />
-  </head>
-  <body>
-    <div class="noise" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PicGrab · 电商图片采集助手</title>
+  <meta name="description" content="粘贴电商商品详情页链接，一键采集页面全部图片，支持单张 PNG 下载与多张 ZIP 打包。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <header class="nav">
-      <a class="nav-brand" href="#top" aria-label="图匣首页">
-        <img src="assets/logo.png" width="28" height="28" alt="" />
-        <span>图匣</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#how">使用方式</a>
-        <a href="#platforms">支持平台</a>
-        <a href="#install">安装</a>
-      </nav>
-      <a class="nav-cta" href="#install">获取扩展</a>
-    </header>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top"><span class="logo">图</span><b>PicGrab</b><i>电商图片采集助手</i></a>
+    <nav id="navLinks">
+      <a href="#features">功能特性</a>
+      <a href="#steps">使用步骤</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#app">开始采集</a>
+  </div>
+</header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="brand-lockup">
-            <span class="brand-cn">图匣</span>
-            <span class="brand-en">PicVault</span>
-          </p>
-          <h1>把商品页里的图，收进你的匣子。</h1>
-          <p class="lede">
-            在电商详情页一键采集全部商品图，新开图库页预览勾选，单张导出 PNG，多张打包 ZIP。
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="#install">立即安装</a>
-            <a class="btn ghost" href="#how">看怎么用</a>
-          </div>
+<main id="top">
+  <!-- Hero -->
+  <section class="hero" id="app">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>电商图片<br>一键全采集</h1>
+        <p class="sub">粘贴商品详情页链接，自动抓取页面全部图片，画廊集中展示，支持单张 PNG 与批量 ZIP 下载。</p>
+        <div class="grab-bar">
+          <input id="pageUrl" type="url" placeholder="粘贴商品详情页链接，如 https://detail.tmall.com/..." spellcheck="false">
+          <button id="btnGrab" class="btn btn-primary">开始采集</button>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <img src="assets/hero-visual.svg" alt="" />
-        </div>
-      </section>
-
-      <section class="section" id="how">
-        <header class="section-head">
-          <h2>三步采完一页图</h2>
-          <p>打开商品页，点扩展，在新页面勾选后下载 PNG 或 ZIP。不改站点，不需账号。</p>
-        </header>
-        <ol class="steps">
-          <li>
-            <span class="step-num">01</span>
-            <h3>打开商品详情</h3>
-            <p>进入淘宝、天猫、京东、拼多多或亚马逊等商品页，必要时滚到详情图区域。</p>
-          </li>
-          <li>
-            <span class="step-num">02</span>
-            <h3>新页面预览</h3>
-            <p>点击工具栏「图匣」，自动打开图库页，列出本页全部主图与详情图，可筛选、全选或单选。</p>
-          </li>
-          <li>
-            <span class="step-num">03</span>
-            <h3>PNG / ZIP 下载</h3>
-            <p>单张导出为 PNG；多张一键打包 ZIP。文件保存在「下载/PicVault」文件夹。</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="section platforms" id="platforms">
-        <header class="section-head">
-          <h2>覆盖主流电商场景</h2>
-          <p>针对阿里系、京东、拼多多、亚马逊等做了缩略图升级规则，其它站点走通用扫描。</p>
-        </header>
-        <ul class="platform-list">
-          <li>淘宝 / 天猫</li>
-          <li>京东</li>
-          <li>拼多多</li>
-          <li>Amazon</li>
-          <li>1688</li>
-          <li>通用网页</li>
-        </ul>
-      </section>
-
-      <section class="section install" id="install">
-        <header class="section-head">
-          <h2>本地加载安装</h2>
-          <p>当前以开发版分发，Chrome / Edge / 国产 Chromium 内核浏览器均可。</p>
-        </header>
-        <div class="install-flow">
-          <ol>
-            <li>打开浏览器扩展管理页：<code>chrome://extensions</code> 或 <code>edge://extensions</code></li>
-            <li>开启右上角「开发者模式」</li>
-            <li>选择「加载已解压的扩展程序」，指向项目里的 <code>extension</code> 文件夹</li>
-            <li>固定「图匣 PicVault」到工具栏，打开任意商品页即可使用</li>
-          </ol>
-          <p class="path-hint">
-            扩展目录：
-            <code id="extPath">picvault/extension</code>
-          </p>
-          <a class="btn primary" href="https://github.com/Ssq060902/ssq/blob/main/extension/manifest.json" target="_blank" rel="noopener">查看扩展清单</a>
-        </div>
-      </section>
-
-      <section class="section note">
-        <header class="section-head">
-          <h2>使用说明</h2>
-          <p>请仅下载你有权使用的图片，遵守目标网站服务条款与版权法规。</p>
-        </header>
-      </section>
-    </main>
-
-    <footer class="foot">
-      <div class="foot-brand">
-        <strong>图匣 PicVault</strong>
-        <span>电商图片采集扩展</span>
+        <p class="hint" id="grabHint">支持淘宝 / 京东 / 亚马逊等商品页 · 无需安装任何插件 · 免费使用</p>
       </div>
-      <p>v1.1.0 · Manifest V3 · PNG / ZIP · 本地运行</p>
-    </footer>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mockup">
+          <div class="mock-bar"><i></i><i></i><i></i><span></span></div>
+          <div class="mock-grid">
+            <div class="tile t1"><b class="ck">✓</b></div>
+            <div class="tile t2"></div>
+            <div class="tile t3"></div>
+            <div class="tile t4"></div>
+            <div class="tile t5"><b class="ck">✓</b></div>
+            <div class="tile t6"></div>
+          </div>
+          <div class="mock-foot"></div>
+        </div>
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- 采集结果 -->
+  <section class="result hidden" id="result">
+    <div class="container">
+      <div class="toolbar">
+        <span class="pill" id="totalInfo">共 0 张</span>
+        <span class="pill pill-green" id="selInfo">已选 0 张</span>
+        <button class="btn btn-ghost btn-sm" id="btnAll">全选</button>
+        <button class="btn btn-ghost btn-sm" id="btnClear">清空选择</button>
+        <span class="spacer"></span>
+        <button class="btn btn-green" id="btnPng">下载选中为 PNG</button>
+        <button class="btn btn-blue" id="btnZip">打包为 ZIP</button>
+      </div>
+      <div class="progress hidden" id="progressWrap">
+        <div class="progress-text" id="progressText">准备中…</div>
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="empty hidden" id="emptyBox">
+        <p>没有采集到图片</p><span>该页面可能需要登录或动态加载，换一个商品页试试。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 功能特性 -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>功能特性</h2>
+      <div class="feat-grid">
+        <div class="feat reveal"><span class="ico">⚡</span><h3>一键采集</h3><p>粘贴链接即可抓取详情页全部图片，自动去重与过滤小图标。</p></div>
+        <div class="feat reveal"><span class="ico">🖼️</span><h3>画廊展示</h3><p>采集结果以响应式画廊集中展示，显示原始尺寸，浏览直观。</p></div>
+        <div class="feat reveal"><span class="ico">🍓</span><h3>单张下载 PNG</h3><p>任意图片一键转码为 PNG 保存，格式统一方便使用。</p></div>
+        <div class="feat reveal"><span class="ico">📦</span><h3>批量打包 ZIP</h3><p>勾选多张自动打包为 ZIP 一次下载，实时显示打包进度。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用步骤 -->
+  <section class="steps" id="steps">
+    <div class="container">
+      <h2>使用流程 只需三步</h2>
+      <div class="step-row">
+        <div class="step reveal"><b>01</b><h3>粘贴链接</h3><p>复制商品详情页地址粘贴到输入框</p></div>
+        <div class="step reveal"><b>02</b><h3>自动采集</h3><p>点击开始采集，自动抓取并展示全部图片</p></div>
+        <div class="step reveal"><b>03</b><h3>勾选下载</h3><p>单张下载 PNG，或多张打包 ZIP 一次带走</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p><b>PicGrab 电商图片采集助手</b> · v2.0 网页版 · 纯前端实现，图片与数据不经过任何服务器存储</p>
+    <p>请仅采集拥有合法权利的商品图片，勿用于侵权用途</p>
+  </div>
+</footer>
+
+<div class="toast hidden" id="toast"></div>
+<script src="jszip.min.js"></script>
+<script src="app.js"></script>
+</body>
 </html>
