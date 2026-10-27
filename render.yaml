@@ -1,0 +1,13 @@
+# Render Blueprint：一键把网页版部署到 Render（免费层）
+# 用法：在 Render 控制台 New → Blueprint，选择本仓库，即可自动创建服务。
+services:
+  - type: web
+    name: picvault
+    runtime: python
+    rootDir: webapp
+    buildCommand: ""
+    startCommand: python server.py
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.0

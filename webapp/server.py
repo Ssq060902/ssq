@@ -353,6 +353,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/proxy":
             self.api_proxy(qs)
             return
+        if path == "/api/health":
+            self.send_json({"ok": True, "service": "picvault", "version": "1.2.0"})
+            return
         if path.startswith("/api/job/"):
             job_id = path[len("/api/job/"):].strip("/")
             self.api_job(job_id)
@@ -408,8 +411,8 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
-    print("图匣 PicVault 网页版已启动： http://127.0.0.1:%d" % PORT)
+    srv = ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
+    print("图匣 PicVault 网页版已启动： http://0.0.0.0:%d" % PORT)
     print("按 Ctrl+C 停止")
     try:
         srv.serve_forever()

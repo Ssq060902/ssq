@@ -58,6 +58,11 @@ py server.py
 - 请仅下载你有权使用的图片，遵守目标网站条款与版权法规
 - 个别电商站有较强的反爬/防盗链，网页版或扩展可能都受限
 
+## 部署
+
+- **介绍页（静态）** → GitHub Pages：仓库已含 `.github/workflows/deploy-pages.yml`，到 GitHub 仓库 Settings → Pages → Source 选「GitHub Actions」，推送后自动生成 `https://Ssq060902.github.io/ssq/`。
+- **网页版（Python 后端）** → Render：仓库根目录有 `render.yaml`，在 Render 控制台 New → Blueprint 选本仓库即可，得到 `https://picvault.onrender.com`，可在 Render 里绑定自定义域名。
+
 ## 版本
 
 v1.2.0
