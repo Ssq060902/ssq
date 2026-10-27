@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>图匣 · 商品图库</title>
+    <link rel="stylesheet" href="viewer.css" />
+    <link rel="icon" href="icons/icon32.png" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <img src="icons/icon32.png" width="28" height="28" alt="" />
+        <div>
+          <div class="brand-name">图匣 PicVault</div>
+          <div class="brand-sub" id="pageTitle">正在载入采集结果…</div>
+        </div>
+      </div>
+      <a class="source-link" id="sourceLink" hidden target="_blank" rel="noopener">打开原商品页</a>
+    </header>
+
+    <section class="toolbar">
+      <label class="check">
+        <input type="checkbox" id="chkAll" checked />
+        <span>全选</span>
+      </label>
+      <span class="count" id="countText">0 张</span>
+      <div class="filters">
+        <button type="button" class="chip active" data-filter="all">全部</button>
+        <button type="button" class="chip" data-filter="gallery">主图</button>
+        <button type="button" class="chip" data-filter="detail">详情</button>
+      </div>
+      <input class="prefix" id="prefix" type="text" maxlength="40" placeholder="文件名前缀" />
+      <button type="button" class="btn ghost" id="btnPng" disabled>下载 PNG</button>
+      <button type="button" class="btn primary" id="btnZip" disabled>打包 ZIP</button>
+    </section>
+
+    <p class="status" id="status"></p>
+
+    <main class="grid" id="grid"></main>
+
+    <section class="empty" id="empty" hidden>
+      <h2>没有采到图片</h2>
+      <p>请打开电商商品详情页，再点击工具栏「图匣」。插件会自动滚动加载详情图并在本页展示。</p>
+    </section>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button type="button" class="lb-close" id="lbClose" aria-label="关闭">×</button>
+      <img id="lbImg" alt="预览" />
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="zip.js"></script>
+    <script src="viewer.js"></script>
+  </body>
+</html>

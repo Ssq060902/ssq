@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "图匣 PicVault",
+  "version": "1.2.0",
+  "description": "在电商详情页获取全部图片，新开页面展示，支持单张 PNG 或多张 ZIP 打包下载。",
+  "permissions": ["activeTab", "downloads", "scripting", "storage"],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_title": "图匣 · 采集商品图片",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true}
+    }
+  ]
+}

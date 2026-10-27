@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>图匣测试页 · 模拟商品详情</title>
+    <style>
+      :root {
+        --bg: #f3f1ec;
+        --ink: #1b1f24;
+        --muted: #66707f;
+        --line: #ddd6cb;
+        --accent: #c45c26;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      header {
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+      }
+      header strong { letter-spacing: 0.08em; }
+      header p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 24px 80px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+      }
+      .gallery img {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+        background: #ddd;
+      }
+      .thumbs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .thumbs img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .info h1 { margin: 0 0 10px; font-size: 1.5rem; }
+      .info p { color: var(--muted); line-height: 1.7; }
+      .price { color: var(--accent); font-size: 1.6rem; font-weight: 700; margin: 16px 0; }
+      .detail { grid-column: 1 / -1; margin-top: 20px; }
+      .detail h2 { font-size: 1.1rem; margin-bottom: 12px; }
+      .detail img {
+        width: 100%;
+        max-width: 720px;
+        display: block;
+        margin: 0 auto 12px;
+        border-radius: 6px;
+      }
+      @media (max-width: 800px) {
+        .wrap { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>图匣测试商品页</strong>
+      <p>安装扩展后打开本页，点击「图匣」应能扫到下方主图与详情图。图片来自公开占位图服务。</p>
+    </header>
+    <div class="wrap">
+      <div class="gallery">
+        <img
+          id="main"
+          class="mainPic"
+          src="https://picsum.photos/id/1011/800/800"
+          alt="主图"
+          width="800"
+          height="800"
+        />
+        <div class="thumbs" id="J_UlThumb">
+          <img src="https://picsum.photos/id/1011/200/200" data-src="https://picsum.photos/id/1011/1200/1200" alt="图1" />
+          <img src="https://picsum.photos/id/1015/200/200" data-src="https://picsum.photos/id/1015/1200/1200" alt="图2" />
+          <img src="https://picsum.photos/id/1025/200/200" data-src="https://picsum.photos/id/1025/1200/1200" alt="图3" />
+          <img src="https://picsum.photos/id/1035/200/200" data-src="https://picsum.photos/id/1035/1200/1200" alt="图4" />
+        </div>
+      </div>
+      <div class="info">
+        <h1>阿玛尼晚风灯芯绒外套 · 测试 SKU</h1>
+        <p>这是供 PicVault 本地验证用的模拟详情页，结构接近常见电商主图区。</p>
+        <div class="price">¥ 899.00</div>
+        <p>提示：点工具栏「图匣」→ 全选 → 下载选中。</p>
+      </div>
+      <div class="detail" id="description">
+        <h2>商品详情</h2>
+        <img src="https://picsum.photos/id/1040/900/500" alt="详情1" />
+        <img src="https://picsum.photos/id/1043/900/700" alt="详情2" />
+        <img src="https://picsum.photos/id/1050/900/600" alt="详情3" />
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll("#J_UlThumb img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const hi = img.dataset.src || img.src;
+          document.getElementById("main").src = hi.replace("/1200/1200", "/800/800");
+        });
+      });
+    </script>
+  </body>
+</html>

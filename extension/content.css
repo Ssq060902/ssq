@@ -1,0 +1,6 @@
+.picvault-hl {
+  outline: 3px solid #e8a04a !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(232, 160, 74, 0.35) !important;
+  transition: outline 0.15s ease, box-shadow 0.15s ease;
+}

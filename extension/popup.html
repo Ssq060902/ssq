@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>图匣 PicVault</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <img class="brand-mark" src="icons/icon32.png" alt="" width="22" height="22" />
+        <div>
+          <div class="brand-name">图匣</div>
+          <div class="brand-sub" id="pageHost">正在识别页面…</div>
+        </div>
+      </div>
+      <button type="button" class="icon-btn" id="btnRefresh" title="重新扫描">↻</button>
+    </header>
+
+    <section class="toolbar">
+      <label class="check">
+        <input type="checkbox" id="chkAll" />
+        <span>全选</span>
+      </label>
+      <span class="meta" id="countText">0 张</span>
+      <div class="filters">
+        <button type="button" class="chip active" data-filter="all">全部</button>
+        <button type="button" class="chip" data-filter="gallery">主图</button>
+        <button type="button" class="chip" data-filter="detail">详情</button>
+      </div>
+    </section>
+
+    <main class="grid" id="grid" aria-live="polite"></main>
+
+    <section class="empty" id="empty" hidden>
+      <p>未找到可用商品图</p>
+      <p class="hint">请打开商品详情页后再试，或滚动加载详情图后点刷新。</p>
+    </section>
+
+    <footer class="bar">
+      <input
+        class="prefix"
+        id="prefix"
+        type="text"
+        maxlength="40"
+        placeholder="文件名前缀"
+        title="下载文件名前缀"
+      />
+      <button type="button" class="btn ghost" id="btnCopy" disabled>复制链接</button>
+      <button type="button" class="btn primary" id="btnDownload" disabled>下载选中</button>
+    </footer>
+
+    <div class="toast" id="toast" hidden></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

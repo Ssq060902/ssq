@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none" role="img" aria-label="˛#«∆:">
+  <defs>
+    <linearGradient id="gBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2230"/>
+      <stop offset="100%" stop-color="#0d1118"/>
+    </linearGradient>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0b45c"/>
+      <stop offset="100%" stop-color="#d4892e"/>
+    </linearGradient>
+    <linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#243041"/>
+      <stop offset="100%" stop-color="#171d28"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#gBg)"/>
+
+  <!-- atmosphere -->
+  <circle cx="980" cy="160" r="180" fill="#e8a04a" opacity="0.08"/>
+  <circle cx="180" cy="720" r="220" fill="#4a7cff" opacity="0.06"/>
+
+  <!-- browser chrome -->
+  <rect x="120" y="110" width="720" height="520" rx="22" fill="#141a22" stroke="#2c3648" stroke-width="2"/>
+  <rect x="120" y="110" width="720" height="48" rx="22" fill="#1b2330"/>
+  <rect x="120" y="134" width="720" height="24" fill="#1b2330"/>
+  <circle cx="158" cy="134" r="6" fill="#ef6b6b"/>
+  <circle cx="180" cy="134" r="6" fill="#e8a04a"/>
+  <circle cx="202" cy="134" r="6" fill="#3ecf8e"/>
+  <rect x="240" y="122" width="420" height="24" rx="8" fill="#0f141c" stroke="#2a3344"/>
+
+  <!-- product gallery mock -->
+  <rect x="160" y="190" width="300" height="300" rx="14" fill="url(#gCard)" stroke="#334055"/>
+  <rect x="190" y="230" width="240" height="180" rx="10" fill="#2a3548"/>
+  <path d="M250 340 L300 280 L360 330 L390 300 L430 360 H250 Z" fill="#3d4d66"/>
+  <circle cx="280" cy="260" r="18" fill="#e8a04a" opacity="0.7"/>
+
+  <rect x="480" y="190" width="130" height="90" rx="10" fill="#223044" stroke="#3a4860"/>
+  <rect x="630" y="190" width="130" height="90" rx="10" fill="#223044" stroke="#3a4860"/>
+  <rect x="480" y="300" width="130" height="90" rx="10" fill="#223044" stroke="#3a4860"/>
+  <rect x="630" y="300" width="130" height="90" rx="10" fill="#223044" stroke="#e8a04a" stroke-width="3"/>
+  <rect x="480" y="410" width="280" height="80" rx="10" fill="#1c2636" stroke="#334055"/>
+  <rect x="500" y="430" width="160" height="12" rx="6" fill="#4a5870"/>
+  <rect x="500" y="454" width="110" height="10" rx="5" fill="#3a465c"/>
+
+  <!-- floating popup panel -->
+  <g filter="url(#soft)">
+    <rect x="700" y="280" width="360" height="420" rx="20" fill="#121820" stroke="#e8a04a" stroke-width="2" opacity="0.98"/>
+  </g>
+  <text x="730" y="330" fill="#eef2f7" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">˛#</text>
+  <text x="800" y="330" fill="#8b95a8" font-family="Segoe UI, sans-serif" font-size="16">PicVault</text>
+  <text x="730" y="360" fill="#8b95a8" font-family="Segoe UI, sans-serif" font-size="14">ÿù / )+ ∑ Ú∆+ 12  </text>
+
+  <!-- thumbs -->
+  <rect x="730" y="390" width="90" height="90" rx="10" fill="#2a3548" stroke="#e8a04a" stroke-width="3"/>
+  <rect x="835" y="390" width="90" height="90" rx="10" fill="#2a3548" stroke="#e8a04a" stroke-width="3"/>
+  <rect x="940" y="390" width="90" height="90" rx="10" fill="#2a3548" stroke="#445268"/>
+  <rect x="730" y="500" width="90" height="90" rx="10" fill="#2a3548" stroke="#e8a04a" stroke-width="3"/>
+  <rect x="835" y="500" width="90" height="90" rx="10" fill="#2a3548" stroke="#445268"/>
+  <rect x="940" y="500" width="90" height="90" rx="10" fill="#2a3548" stroke="#445268"/>
+
+  <rect x="730" y="620" width="220" height="44" rx="12" fill="url(#gAmber)"/>
+  <text x="790" y="648" fill="#1a1208" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">}	-</text>
+  <rect x="960" y="620" width="70" height="44" rx="12" fill="#1c2636" stroke="#334055"/>
+
+  <!-- motion arrows -->
+  <path d="M640 360 C670 340, 690 350, 710 360" stroke="#e8a04a" stroke-width="3" stroke-dasharray="6 8" opacity="0.8"/>
+  <path d="M700 360 l-14 -8 M700 360 l-10 12" stroke="#e8a04a" stroke-width="3" stroke-linecap="round"/>
+</svg>

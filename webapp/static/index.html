@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>图匣 PicVault · 网页版</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="landing">
+      <div class="logo-row">
+        <img src="../extension/icons/icon48.png" width="40" height="40" alt="" />
+        <div>
+          <div class="brand">图匣 <span>PicVault</span></div>
+          <div class="sub">电商商品图采集 · 网页版（免安装）</div>
+        </div>
+      </div>
+
+      <h1>粘贴商品链接，采下全部图片</h1>
+      <p class="lede">
+        输入淘宝 / 天猫 / 京东 / 拼多多 / 亚马逊等商品详情页地址，
+        自动抓取页内所有图片，并支持单张 PNG 与多张 ZIP 下载。
+      </p>
+
+      <form id="form" class="search">
+        <input
+          id="url"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="https://item.jd.com/100012043978.html"
+        />
+        <button type="submit" id="btn" class="btn primary">采集图片</button>
+      </form>
+
+      <p class="hint" id="hint">粘贴任意商品详情页链接即可。若目标站点有反爬校验，页面会返回提示。</p>
+
+      <p class="err" id="err" hidden></p>
+      <p class="loading" id="loading" hidden>正在抓取并解析页面，请稍候…</p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
